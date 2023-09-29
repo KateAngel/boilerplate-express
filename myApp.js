@@ -47,7 +47,7 @@ app.route("/name").get( (req, res) => {
         name: `${firstName} ${lastName}`
     });
 }).post( (req, res) => { 
-    var firstName = req.bodyy.first;
+    var firstName = req.body.first;
     var lastName = req.body.last;
     res.json({ 
         name: `${firstName} ${lastName}`
