@@ -37,7 +37,19 @@ let app = express();
         });
     })
 
-
+    app.route("/name").get( (req, res) => { 
+        var firstName = req.query.first;
+        var lastName = req.query.last;
+        res.json({ 
+            name: `${firstName} ${lastName}`
+        });
+    }).post( (req, res) => { 
+        var firstName = req.bodyy.first;
+        var lastName = req.body.last;
+        res.json({ 
+            name: `${firstName} ${lastName}`
+        });
+    });
 
 
 
