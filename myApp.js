@@ -2,7 +2,11 @@ require('dotenv').config()
 let express = require('express');
 let app = express();
 
-
+    app.use(function middleware(req, res, next) {
+        console.log(req.method + " " + req.path + " - " + req.ip)
+        next()
+    });
+    
     console.log('Hello World!');
     app.get('/', function (req, res) {
         absolutePath = __dirname + '/views/index.html';
